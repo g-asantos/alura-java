@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.List, manager.servlet.Empresa" %>
+<%@ page import="java.util.List, manager.modelo.Empresa" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
@@ -10,6 +10,17 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+
+<c:import url="logout-parcial.jsp" />
+
+Usuario logado: ${usuarioLogado.login}
+
+
+<br>
+<br>
+<br>
+
 
 <c:if test="${not empty empresa }">
 
@@ -25,10 +36,10 @@ Lista de empresas: <br/>
 		<li>
 		
 		${empresa.nome} - <fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy" />
-		<a href="/manager/mostraEmpresa?id=${empresa.id}">
+		<a href="/manager/entrada?acao=MostraEmpresa&id=${empresa.id}">
 		edita
 		</a>
-		<a href="/manager/removeEmpresa?id=${empresa.id}">
+		<a href="/manager/entrada?acao=RemoveEmpresa&id=${empresa.id}">
 		remove
 		</a>
 		</li>

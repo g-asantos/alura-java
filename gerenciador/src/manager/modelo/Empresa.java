@@ -1,4 +1,4 @@
-package manager.servlet;
+package manager.modelo;
 
 import java.util.Date;
 
