@@ -1,7 +1,8 @@
-public class Conta {
 
-    void deposita() throws MinhaExcecao {
-        
-    }
+public class Conta {
+	
+	void deposita() throws MinhaExcecao {
+		
+	}
 
 }
